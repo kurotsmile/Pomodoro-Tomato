@@ -132,7 +132,6 @@ public class Apps : MonoBehaviour
         inp_timer.inp_text.contentType = InputField.ContentType.IntegerNumber;
         inp_timer.inp_text.text = val.ToString();
         inp_timer.set_act_done(act_done_change_timer);
-        inp_timer.set_type(Carrot.Window_Input_Type.act_done);
     }
 
     private void act_done_change_timer(string val_timer)
