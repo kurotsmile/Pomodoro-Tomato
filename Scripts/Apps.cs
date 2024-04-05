@@ -159,7 +159,7 @@ public class Apps : MonoBehaviour
         }
         else
         {
-            this.carrot.show_msg("Change time", "the number of minutes entered must be greater than 0",Carrot.Msg_Icon.Error);
+            this.carrot.Show_msg("Change time", "the number of minutes entered must be greater than 0",Carrot.Msg_Icon.Error);
         }
 
     }
