@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Carrot;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -34,8 +35,12 @@ public class Apps : MonoBehaviour
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
         await this.carrot.Load_CarrotAsync(this.check_exit_app);
         this.ads.On_Load();
+        this.ads.onRewardedSuccess=this.carrot.game.OnRewardedSuccess;
+        this.carrot.game.act_click_watch_ads_in_music_bk=this.ads.ShowRewardedVideo;
         this.carrot.act_after_delete_all_data = this.act_delete_all_data;
         this.carrot.game.load_bk_music(this.sound[0]);
+        this.carrot.shop.onCarrotPaySuccess += onCarrotPaySuccess;
+        this.carrot.shop.onCarrotRestoreSuccess += onCarrotRestoreSuccess;
         this.tomato.on_load();
         this.report.on_load();
 
@@ -217,5 +222,26 @@ public class Apps : MonoBehaviour
         if (this.box_setting != null) this.box_setting.close();
         this.carrot.play_sound_click();
         this.report.show_report();
+    }
+
+    private void onCarrotPaySuccess(string id_product)
+    {
+        if (id_product == this.carrot.shop.get_id_by_index(0))
+        {
+            this.carrot.Show_msg("Remove Ads", "Remove Ads Success!", Msg_Icon.Success);
+            this.ads.RemoveAds();
+        }
+    }
+
+    private void onCarrotRestoreSuccess(string[] array_id)
+    {
+        foreach (string id_product in array_id)
+        {
+            if (id_product == this.carrot.shop.get_id_by_index(0))
+            {
+                this.carrot.Show_msg("Remove Ads", "Remove Ads Success!", Msg_Icon.Success);
+                this.ads.RemoveAds();
+            }
+        }
     }
 }

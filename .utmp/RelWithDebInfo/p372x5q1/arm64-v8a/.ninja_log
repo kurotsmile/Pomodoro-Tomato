@@ -1,3 +1,5 @@
 # ninja log v5
-1	467	7582536723285917	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	b9233d34afcea767
-469	800	7582536726435504	D:/Pomodoro Tomato/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/p372x5q1/obj/arm64-v8a/libswappywrapper.so	41806b9c30e9b0a1
+27	1239	7582643848811754	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	b9233d34afcea767
+1239	1707	7582643853477346	D:/Pomodoro Tomato/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/p372x5q1/obj/arm64-v8a/libswappywrapper.so	41806b9c30e9b0a1
+13	1488	7582661825074531	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	b9233d34afcea767
+1489	2335	7582661833652564	D:/Pomodoro Tomato/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/p372x5q1/obj/arm64-v8a/libswappywrapper.so	41806b9c30e9b0a1
