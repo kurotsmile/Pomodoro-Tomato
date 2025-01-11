@@ -30,10 +30,10 @@ public class Apps : MonoBehaviour
     private Carrot.Carrot_Box_Item item_change_timer;
     private Carrot.Carrot_Box box_setting;
 
-    async void Start()
+    void Start()
     {
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
-        await this.carrot.Load_CarrotAsync(this.check_exit_app);
+        this.carrot.Load_Carrot(this.check_exit_app);
         this.ads.On_Load();
         this.ads.onRewardedSuccess=this.carrot.game.OnRewardedSuccess;
         this.carrot.game.act_click_watch_ads_in_music_bk=this.ads.ShowRewardedVideo;
@@ -178,9 +178,9 @@ public class Apps : MonoBehaviour
         this.tomato.next_timer(true);
     }
 
-    public async void btn_user()
+    public void btn_user()
     {
-        await this.carrot.user.Show_loginAsync();
+        this.carrot.user.show_login();
     }
 
     public void btn_rate()
@@ -193,9 +193,9 @@ public class Apps : MonoBehaviour
         this.carrot.show_share();
     }
 
-    public async void btn_rank()
+    public void btn_rank()
     {
-        await this.carrot.game.Show_List_Top_player();
+        this.carrot.game.Show_List_Top_player();
     }
 
     public void play_sound(int index)
@@ -208,10 +208,10 @@ public class Apps : MonoBehaviour
         this.txt_score_tomato.text = this.count_tomato.ToString();
     }
 
-    public async void add_scores_tomato()
+    public void add_scores_tomato()
     {
         this.count_tomato++;
-        await this.carrot.game.update_scores_playerAsync(this.count_tomato);
+        this.carrot.game.update_scores_player(this.count_tomato);
         PlayerPrefs.SetInt("count_tomato", this.count_tomato);
         this.update_ui_emp();
     }
